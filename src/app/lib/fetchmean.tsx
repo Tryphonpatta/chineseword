@@ -1,11 +1,14 @@
 "use server";
 import translate from "@iamtraction/google-translate";
 
-export default async function fetchmean(word: string): Promise<string> {
+export default async function fetchmean(i: {
+  word: string;
+  lang: string;
+}): Promise<string> {
   let data: any;
-  data = translate(word, { to: "th" })
+  data = translate(i.word, { to: i.lang })
     .then((res) => {
-      console.log(res.text);
+      console.log(res.text, i.lang);
       return res.text;
     })
     .catch((err) => {
