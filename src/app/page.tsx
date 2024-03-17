@@ -50,7 +50,7 @@ export default function Home() {
               color="primary"
               onPress={() => {
                 setIsPlaying(!isPlaying);
-                fetchword();
+                randomword();
               }}
             >
               Play
